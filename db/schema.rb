@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_194718) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_180311) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fiveyeargoals", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "done"
+    t.string "category"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_fiveyeargoals_on_user_id"
+  end
+
+  create_table "quarterlygoals", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "done"
+    t.bigint "yearlygoal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["yearlygoal_id"], name: "index_quarterlygoals_on_yearlygoal_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +50,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_194718) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weeklytodos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "done"
+    t.bigint "quarterlygoal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quarterlygoal_id"], name: "index_weeklytodos_on_quarterlygoal_id"
+  end
+
+  create_table "yearlygoals", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "done"
+    t.bigint "fiveyeargoal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fiveyeargoal_id"], name: "index_yearlygoals_on_fiveyeargoal_id"
+  end
+
+  add_foreign_key "fiveyeargoals", "users"
+  add_foreign_key "quarterlygoals", "yearlygoals"
+  add_foreign_key "weeklytodos", "quarterlygoals"
+  add_foreign_key "yearlygoals", "fiveyeargoals"
 end
