@@ -1,0 +1,2 @@
+class WeeklytodosController < ApplicationController
+end

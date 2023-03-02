@@ -1,0 +1,2 @@
+class FiveyeargoalsController < ApplicationController
+end

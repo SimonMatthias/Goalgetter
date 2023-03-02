@@ -1,0 +1,2 @@
+class QuarterlygoalsController < ApplicationController
+end
