@@ -3,20 +3,20 @@ class WeeklytodosController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
 
   def index
-    @weeklytodos = Weeklytodos.all
+    @weeklytodos = Weeklytodo.all
   end
 
   def show
-    @weeklytodo = Weeklytodos.find(params[:id])
+    @weeklytodo = Weeklytodo.find(params[:id])
   end
 
   def new
-    @weeklytodo = Weeklytodos.new
+    @weeklytodo = Weeklytodo.new
   end
 
   def create
     @user = current_user
-    @weeklytodo = Weeklytodos.new(weeklytodo_params)
+    @weeklytodo = Weeklytodo.new(weeklytodo_params)
     @weeklytodo.user = @user
     if @weeklytodo.save
       # redirect_to yearlygoal_path(@ygoal) unclear about route
@@ -41,7 +41,7 @@ class WeeklytodosController < ApplicationController
   private
 
   def set_weeklytodo
-    @weeklytodo = Weeklytodos.find(params[:id])
+    @weeklytodo = Weeklytodo.find(params[:id])
   end
 
   def weeklytodo_params
