@@ -1,0 +1,21 @@
+<h1>What three things can inch you towards your yearly goal?</h1>
+<h2>Make your goals SMART! Specific, Measurable, Achievable, Relevant, and Time-Bound</h2>
+
+<%= form_with(url: '/quarterly_goals', method: 'post') do |form| %>
+  <div>
+    <%= form.label :goal1, "Goal 1: " %>
+    <%= form.text_field :goal1 %>
+  </div>
+
+  <div>
+    <%= form.label :goal2, "Goal 2: " %>
+    <%= form.text_field :goal2 %>
+  </div>
+
+  <div>
+    <%= form.label :goal3, "Goal 3: " %>
+    <%= form.text_field :goal3 %>
+  </div>
+
+  <p><%= form.submit 'Save & Continue' %></p>
+<% end %>
