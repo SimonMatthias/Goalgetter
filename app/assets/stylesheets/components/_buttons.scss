@@ -1,0 +1,16 @@
+.btn-blue {
+  color: white;
+  padding: 8px 96px;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-weight: 600;
+  background: linear-gradient(#9AD5FF, #64A4F4);
+  transition: background 0.3s ease;
+  border: 1px solid #64A4F4;
+  margin: 10px;
+}
+
+.btn-blue:hover {
+  background: linear-gradient(#2376C1, #64A4F4);
+  color: white;
+}
