@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/inspiration', to: 'pages#inspiration', as: :inspiration
 end
