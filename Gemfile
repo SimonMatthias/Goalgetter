@@ -78,8 +78,5 @@ end
 
 gem "devise"
 
-<<<<<<< HEAD
 gem "cloudinary"
-=======
 gem "faker"
->>>>>>> 7fedbefa8de03c8242139dc09838e9abb044ffe9
