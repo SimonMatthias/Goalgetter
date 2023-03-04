@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/fiveyeargoals', to: 'fiveyeargoals#index', as: :fiveyeargoals
+  get '/yearlygoals', to: 'yearlygoals#index', as: :yearlygoals
+  get '/quarterlygoals', to: 'quarterlygoals#index', as: :quarterlygoals
 end
