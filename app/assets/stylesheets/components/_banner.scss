@@ -9,3 +9,13 @@
   transform: translateX(-50%);
   z-index: -1;
 }
+
+.banner-soft-red {
+  flex-direction: row;
+  -ms-flex-item-align: stretch;
+  background-color: #FFAB9B;
+  height: 465px;
+  position: sticky;
+  bottom: 0;
+  margin: 0 auto;
+}
