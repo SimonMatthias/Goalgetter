@@ -20,12 +20,27 @@
   transition: background 0.3s ease;
   border: 1px solid #F57B6E;
   margin: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 16px;
+  gap: 8px;
 }
 
 .login {
-  width: 96px;
-  height: 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 16px;
+  gap: 8px;
+
   background: #64A4F4;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
 }
 
 .btn-blue:hover {
@@ -36,4 +51,20 @@
 .btn-red:hover {
   background: linear-gradient(#F57B6E, #FFAB9B);
   color: white;
+}
+
+.btn-white {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 8px;
+  border: 1px solid #64A4F4;
+  border-radius: 8px;
+  color: #64A4F4;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
 }
