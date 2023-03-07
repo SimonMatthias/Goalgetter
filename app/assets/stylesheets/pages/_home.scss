@@ -26,6 +26,12 @@ h2 {
   color: #143434;
 }
 
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #143434;
+}
+
 .secondary{
   position: absolute;
   width: 745px;
@@ -50,28 +56,45 @@ h2 {
 }
 
 .inspiration {
-  width: 188px;
+  width: 371px;
   height: 39px;
   left: 626px;
   top: 1021px;
+  background: #F57B6E;
+  transition: none;
+}
+
+.all-testimonial {
   display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  width: 100%;
 }
 
 .testimonial {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 23px 21px;
   gap: 29px;
 
   position: relative;
   width: 371px;
-  height: 297px;
-  left: 89px;
-  // top: 683px;
+  height: fit-content;
 
   background: #FFFFFF;
-  /* Big flare shadow */
   box-shadow: 15px 10px 40px rgba(20, 52, 52, 0.25);
   border-radius: 8px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+}
+
+.image-circle {
+  border-radius: 50%;
+  width: 126px;
+  height: 126px;
 }
