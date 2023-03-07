@@ -1,1 +1,100 @@
 // Specific CSS for your home-page
+
+h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #64A4F4;
+}
+
+.main {
+  position: absolute;
+  width: 751px;
+  height: 113px;
+  left: 139px;
+  top: 209px;
+}
+
+h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  color: #143434;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #143434;
+}
+
+.secondary{
+  position: absolute;
+  width: 745px;
+  height: 84px;
+  left: 139px;
+  top: 279px;
+}
+
+.long {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 33px;
+  gap: 10px;
+
+  position: absolute;
+  width: 430px;
+  height: 39px;
+  left: 141px;
+  top: 449px;
+}
+
+.inspiration {
+  width: 371px;
+  height: 39px;
+  left: 626px;
+  top: 1021px;
+  background: #F57B6E;
+  transition: none;
+}
+
+.all-testimonial {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  width: 100%;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 23px 21px;
+  gap: 29px;
+
+  position: relative;
+  width: 371px;
+  height: fit-content;
+
+  background: #FFFFFF;
+  box-shadow: 15px 10px 40px rgba(20, 52, 52, 0.25);
+  border-radius: 8px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+}
+
+.image-circle {
+  border-radius: 50%;
+  width: 126px;
+  height: 126px;
+}
