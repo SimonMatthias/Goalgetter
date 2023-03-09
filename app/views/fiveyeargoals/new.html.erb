@@ -1,0 +1,36 @@
+<h1>Define your 5 year goals!</h1>
+
+<%= form_with(model: @fiveyeargoal, local: true) do |form| %>
+  <h2>Visualize your life in 5 years - what do you see?</h2>
+  <%= form.label :vision %>
+  <%= form.text_field :vision %>
+
+  <h2>What are the three things you need to achieve to make your 5 year vision come true?</h2>
+
+  <div>
+    <label for="thing_1">Thing 1:</label>
+    <%= form.text_field :thing_1 %>
+  </div>
+
+  <div>
+    <label for="thing_2">Thing 2:</label>
+    <%= form.text_field :thing_2 %>
+  </div>
+
+  <div>
+    <label for="thing_3">Thing 3:</label>
+    <%= form.text_field :thing_3 %>
+  </div>
+
+  <input type="submit" value="Save">
+<% end %>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Update the question titles when the form loads
+    $('h2:first').text('Visualize your life in 5 years - what do you see?');
+    $('h2:last').text('What are the three things you need to achieve to make your 5 year vision come true?');
+  });
+</script>
+
