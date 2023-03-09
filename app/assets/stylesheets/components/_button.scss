@@ -64,3 +64,14 @@
   order: 1;
   flex-grow: 1;
 }
+
+.btn-white {
+  color: #64A4F4;
+  padding: 8px 96px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  background-color: white;
+  border: 1px solid #64A4F4;
+  margin: 10px;
+}

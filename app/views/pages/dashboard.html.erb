@@ -1,1 +1,19 @@
-<p>Dashboard</p>
+<div class= "side-navbar">
+  <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %>
+  <h2>Your goals</h2>
+    <%= link_to "5 Year goals", "/fiveyeargoals/details"%>
+    <%= link_to "Yearly goals", "/yearlygoals/details"%>
+    <%= link_to "Quarterly goals", "/fiveyeargoals/details"%>
+    <%= link_to "Weekly tasks", "/fiveyeargoals/details"%>
+  <h2>More</h2>
+    <%= link_to "Browse community", "/community"%>
+    <%= link_to "Inspiration", "/inspiration" %>
+    <%= link_to "Settings", "/settings", class: "btn btn-white" %>
+</div>
+
+
+
+
+<h1>Welcome Laura!</h1>
+<p>Keep up the good work, you already accomplished 25% of your goals!</p>
+<h2>Your weekly tasks:</h2>
