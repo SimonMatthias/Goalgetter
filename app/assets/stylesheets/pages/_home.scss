@@ -1,58 +1,28 @@
 // Specific CSS for your home-page
-
-h1 {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 58px;
-  color: #64A4F4;
+.info {
+  background-image: url('background_test.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
 }
 
+.innerinfo {
+  max-width: 500px;
+}
 .main {
-  position: absolute;
-  width: 751px;
-  height: 113px;
-  left: 139px;
-  top: 209px;
-}
-
-h2 {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 39px;
-  color: #143434;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-  color: #143434;
+  // position: absolute;
+  // background-color: red;
 }
 
 .secondary{
-  position: absolute;
-  width: 745px;
-  height: 84px;
-  left: 139px;
-  top: 279px;
+
 }
 
 .long {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 10px 33px;
-  gap: 10px;
-
-  position: absolute;
-  width: 430px;
-  height: 39px;
-  left: 141px;
-  top: 449px;
 }
 
 .inspiration {
@@ -97,4 +67,5 @@ p {
   border-radius: 50%;
   width: 126px;
   height: 126px;
+  object-fit: cover;
 }

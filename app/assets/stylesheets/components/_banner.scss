@@ -11,10 +11,10 @@
 }
 
 .banner-soft-red-bottom {
-  position: fixed;
+  // position: fixed;
   bottom: 0;
   width: 100%;
-  height: 43%;
+  // height: 43%;
   background-color: #FFAB9B;
   display: flex;
   flex-direction: column;
@@ -22,5 +22,4 @@
   flex-wrap:wrap;
   flex-basis: auto;
   flex: 0 1 24%;
-
 }
