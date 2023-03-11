@@ -1,28 +1,21 @@
 .btn-blue {
   color: white;
-  padding: 8px 96px;
+  padding: 8px 64px;
   border-radius: 8px;
-  font-family: 'Inter';
   font-weight: 600;
   background: linear-gradient(#9AD5FF, #64A4F4);
   transition: background 0.3s ease;
   border: 1px solid #64A4F4;
-  margin: 10px;
 }
 
 .btn-red{
   color: white;
-  padding: 8px 96px;
+  padding: 8px 64px;
   border-radius: 8px;
   font-weight: 600;
   background: linear-gradient(#FFAB9B, #F57B6E);
   transition: background 0.3s ease;
   border: 1px solid #F57B6E;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 .login {
@@ -34,7 +27,6 @@
   padding: 15px 16px;
   gap: 8px;
   background: #64A4F4;
-  border: 1px solid #FFFFFF;
   border-radius: 8px;
 }
 
@@ -42,7 +34,6 @@
   background: linear-gradient(#2376C1, #64A4F4);
   color: white;
 }
-
 
 .btn-red:hover {
   background: linear-gradient(#F57B6E, #FFAB9B);
@@ -55,7 +46,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 16px 8px;
+  padding: 8px 96px;
   gap: 8px;
   border: 1px solid #64A4F4;
   border-radius: 8px;
@@ -63,20 +54,38 @@
   flex: none;
   order: 1;
   flex-grow: 1;
-}
-
-.btn-white {
-  color: #64A4F4;
-  padding: 8px 96px;
-  border-radius: 8px;
   font-weight: 600;
   transition: background 0.3s ease;
-  background-color: white;
-  border: 1px solid #64A4F4;
+  background: white;
   margin: 10px;
 }
 
 .btn-white:hover {
   background-color:#64A4F4;
+  color: white
+}
+
+.btn-white-red {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 96px;
+  gap: 8px;
+  border: 1px solid #FFAB9B;
+  border-radius: 8px;
+  color: #FFAB9B;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  background: white;
+  margin: 10px;
+}
+
+.btn-white-red:hover {
+  background: #FFAB9B;
   color: white
 }

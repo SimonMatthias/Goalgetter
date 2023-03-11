@@ -51,3 +51,25 @@
   position: relative;
   display: inline-block;
 }
+
+.card-to-do {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 40px;
+  background: #FFFFFF;
+  opacity: 0.95;
+  box-shadow: 15px 10px 40px rgba(20, 52, 52, 0.25);
+  border-radius: 8px;
+}
+
+.card-to-do-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-to-do-links {
+  display: flex;
+  flex-direction: column;
+}

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :fiveyeargoals, only: [:new, :create]
   resources :yearlygoals, only: [:new, :create]
   resources :quarterlygoals, only: [:new, :create]
+  resources :weeklytodos
 
   get '/inspiration', to: 'pages#inspiration', as: :inspiration
 end
