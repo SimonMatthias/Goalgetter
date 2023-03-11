@@ -1,6 +1,6 @@
 class WeeklytodosController < ApplicationController
   before_action :set_weeklytodo, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @weeklytodos = Weeklytodo.all

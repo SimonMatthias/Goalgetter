@@ -13,9 +13,14 @@
        <%= link_to "Settings", "/settings", class: "btn btn-white" %>
        </div>
    </div>
-   <div class="dashboard-content">
-     <h1>Welcome Laura!</h1>
-     <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
-     <h2>Your weekly tasks:</h2>
-     </div>
+<div class="dashboard-content">
+  <h1>Welcome Laura!</h1>
+  <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
+  <h2>Your weekly tasks:</h2>
+    <% @weeklytodos.each do |weeklytodo| %>
+      <%# <%= link_to weeklytodo_path(weeklytodo)do %>
+        <p><%= weeklytodo.title %><p>
+        <p><%= weeklytodo.description %><p>
+      <%# <% end %>
+    <% end %>
  </div>
