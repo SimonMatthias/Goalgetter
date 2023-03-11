@@ -80,3 +80,5 @@ gem "devise"
 
 gem "cloudinary"
 gem "faker"
+gem "reform"
+gem "reform-rails"
