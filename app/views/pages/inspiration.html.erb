@@ -1,6 +1,6 @@
 <div style="text-align: right; margin-right: 200px;">
-  <h1 style="color: #64A4F4; font-family: 'Inter'; font-weight: 700;">Inspiration</h1>
-  <h2 style="color: #143434; font-family: 'Inter'; font-weight: 600;">Stories from fellow Goalgetters</h2>
+  <h1 style="color: #64A4F4; font-weight: 700;">Inspiration</h1>
+  <h2 style="color: #143434; font-weight: 600;">Stories from fellow Goalgetters</h2>
 </div>
 
 <div class="banner"></div>
@@ -41,5 +41,9 @@
 </div>
 
 <div style="text-align: center;">
-  <%= link_to "Start your journey", new_user_registration_path, class: "btn btn-blue" %>
+  <% if current_user == nil %>
+    <%= link_to 'Start your journey', '/users/sign_up', class: 'btn btn-blue' %>
+  <% else %>
+    <%= link_to 'Start your journey', '/fiveyeargoals/new', class: 'btn btn-blue' %>
+  <% end %>
 </div>

@@ -1,5 +1,5 @@
 <div class="background-image-signup">
-  <div class="card">
+  <div class="card-signup">
     <h2 class="card-header">Register today and find your personal North Star!</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
       data: {turbo: false}) do |f| %>
@@ -28,10 +28,13 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password", class: "input-field" } %>
-        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+        <div data-controller="photo-preview">
+          <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" }}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview", data: { photo_preview_target: "image" } %>
+        </div>
       </div>
       <div class="card-footer">
-        <%= f.button :submit, "Sign up", class: "btn btn-red"%>
+        <%= f.button :submit, "Sign up", class: "btn signup"%>
       </div>
     <% end %>
   </div>

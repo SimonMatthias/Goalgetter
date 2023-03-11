@@ -1,6 +1,16 @@
-.card {
+.card-signin {
   max-width: 600px;
   height: 870px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 20px 20px 40px rgba(20, 52, 52, 0.15);
+  opacity: 0.9;
+}
+
+.card-signup {
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: white;
@@ -46,7 +56,7 @@
 .upload-photo {
   margin-top: 20px;
   border: 1px solid #d3d3d3;
-  padding: 16px 24px;
+  padding: 8px 192px;
   cursor: pointer;
   font-weight: 500;
   background: white;
