@@ -2,7 +2,6 @@
   color: white;
   padding: 8px 96px;
   border-radius: 8px;
-  font-family: 'Inter';
   font-weight: 600;
   background: linear-gradient(#9AD5FF, #64A4F4);
   transition: background 0.3s ease;
@@ -34,7 +33,6 @@
   padding: 15px 16px;
   gap: 8px;
   background: #64A4F4;
-  border: 1px solid #FFFFFF;
   border-radius: 8px;
 }
 
@@ -55,7 +53,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 16px 8px;
+  padding: 8px 96px;
   gap: 8px;
   border: 1px solid #64A4F4;
   border-radius: 8px;
@@ -63,20 +61,38 @@
   flex: none;
   order: 1;
   flex-grow: 1;
-}
-
-.btn-white {
-  color: #64A4F4;
-  padding: 8px 96px;
-  border-radius: 8px;
   font-weight: 600;
   transition: background 0.3s ease;
-  background-color: white;
-  border: 1px solid #64A4F4;
+  background: white;
   margin: 10px;
 }
 
 .btn-white:hover {
   background-color:#64A4F4;
+  color: white
+}
+
+.btn-white-red {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 96px;
+  gap: 8px;
+  border: 1px solid #FFAB9B;
+  border-radius: 8px;
+  color: #FFAB9B;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  background: white;
+  margin: 10px;
+}
+
+.btn-white-red:hover {
+  background: #FFAB9B;
   color: white
 }
