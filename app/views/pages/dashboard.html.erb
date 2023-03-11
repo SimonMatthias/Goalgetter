@@ -13,9 +13,28 @@
        <%= link_to "Settings", "/settings", class: "btn btn-white" %>
        </div>
    </div>
-   <div class="dashboard-content">
-     <h1>Welcome Laura!</h1>
-     <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
-     <h2>Your weekly tasks:</h2>
-     </div>
+<div class="dashboard-content">
+  <h1>Welcome Laura!</h1>
+  <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
+  <h2>Your weekly tasks:</h2>
+    <div class="card-to-do">
+      <div class="card-info">
+        <div class="card-to-do-title">
+          <% @weeklytodos.each do |weeklytodo| %>
+          <%# <%= link_to weeklytodo_path(weeklytodo)do %>
+            <input id="weeklytodo" name="weeklytodo" type="checkbox" value="1" />
+            <label for="weeklytodo">
+              <h5><%= weeklytodo.title %></h5>
+            </label>
+        </div>
+          <p><%= weeklytodo.description %><p>
+          </div>
+          <div class="card-to-do-links">
+          <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
+          <p>from quarterly goal</p>
+          <%= button_to weeklytodo.quarterlygoal.title, quarterlygoals_path, class: "btn-white-red" %>
+          <% end %>
+          </div>
+    </div>
  </div>
+</div>

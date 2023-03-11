@@ -18,8 +18,10 @@ class YearlygoalsController < ApplicationController
     @user = current_user
     @yearlygoal = Yearlygoal.new(yearlygoal_params)
     @yearlygoal.user = @user
+    @yearlygoal.thing_1 = params[:yearlygoal][:thing_1]
+
     if @yearlygoal.save
-      # redirect_to yearlygoal_path(@ygoal) unclear about route
+      redirect_to yearlygoal_path(@yearlygoal)
     else
       render :new, status: :unprocessable_entity
     end
