@@ -33,7 +33,6 @@
   align-items: center;
   padding: 15px 16px;
   gap: 8px;
-
   background: #64A4F4;
   border: 1px solid #FFFFFF;
   border-radius: 8px;
@@ -43,6 +42,7 @@
   background: linear-gradient(#2376C1, #64A4F4);
   color: white;
 }
+
 
 .btn-red:hover {
   background: linear-gradient(#F57B6E, #FFAB9B);
@@ -63,4 +63,20 @@
   flex: none;
   order: 1;
   flex-grow: 1;
+}
+
+.btn-white {
+  color: #64A4F4;
+  padding: 8px 96px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  background-color: white;
+  border: 1px solid #64A4F4;
+  margin: 10px;
+}
+
+.btn-white:hover {
+  background-color:#64A4F4;
+  color: white
 }
