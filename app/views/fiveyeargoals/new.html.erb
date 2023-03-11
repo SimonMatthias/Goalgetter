@@ -9,17 +9,17 @@
 
   <div>
     <label for="thing_1">Thing 1:</label>
-    <%= form.text_field :thing_1 %>
+    <%= form.text_field :title, id: "thing_1" %>
   </div>
 
   <div>
     <label for="thing_2">Thing 2:</label>
-    <%= form.text_field :thing_2 %>
+    <%= form.text_field :title, id: "thing_2" %>
   </div>
 
   <div>
     <label for="thing_3">Thing 3:</label>
-    <%= form.text_field :thing_3 %>
+    <%= form.text_field :title, id: "thing_3" %>
   </div>
 
   <input type="submit" value="Save">
@@ -33,4 +33,3 @@
     $('h2:last').text('What are the three things you need to achieve to make your 5 year vision come true?');
   });
 </script>
-
