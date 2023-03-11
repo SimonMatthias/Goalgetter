@@ -43,16 +43,21 @@
         <div class="card-to-do-links">
           <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
           <p>from quarterly goal</p>
-          <%= button_to weeklytodo.quarterlygoal.title, quarterlygoals_path, class: "btn-white-red" %>
+          <%= button_to weeklytodo.quarterlygoal.title, "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", class: "btn-white-red" %>
           <% end %>
         </div>
     </div>
     <h2>Your quarterly goals:</h2>
     <% @quarterlygoals.each do |quarterlygoal| %>
       <div class="progress-card-small">
+          <div class="progressbar-small">
+            <div class="progress-small" style="height:25%"></div>
+          </div>
           <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-        <h5><%= quarterlygoal.title %></h5>
-        <p> <span style="color: #FFAB9B">6/16 </span> goals achieved</p>
+          <div class="progress-card-small-info">
+            <h5><%= quarterlygoal.title %></h5>
+            <p> <span style="color: #FFAB9B">6/16 </span> goals achieved</p>
+          </div>
       <% end %>
     </div>
   </div>

@@ -1,0 +1,16 @@
+.progressbar-small {
+  background-color: white;
+  border: 1px solid #FFAB9B;
+  padding: 0;
+  border-radius: inherit;
+  height: 20vh;
+  width: 24px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.progressbar-small .progress {
+  background-color: #FFAB9B;
+  padding: 0%;
+  border-radius: 7px;
+}

@@ -8,5 +8,4 @@ class PagesController < ApplicationController
     @weeklytodos = current_user.weeklytodos
     @quarterlygoals = current_user.quarterlygoals
   end
-
 end
