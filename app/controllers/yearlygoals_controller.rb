@@ -11,20 +11,21 @@ class YearlygoalsController < ApplicationController
   end
 
   def new
-    @yearygoal = Yearlygoal.new
+    @yearlygoal = Yearlygoal.new
   end
 
   def create
-    @user = current_user
-    @yearlygoal = Yearlygoal.new(yearlygoal_params)
-    @yearlygoal.user = @user
-    @yearlygoal.thing_1 = params[:yearlygoal][:thing_1]
-
-    if @yearlygoal.save
-      redirect_to yearlygoal_path(@yearlygoal)
-    else
-      render :new, status: :unprocessable_entity
+    selected_goal = params[:most_important]
+    @fiveyeargoal = current_user.fiveyeargoals.first
+    case selected_goal
+    when 'yearly_goal_1'
+      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_1][:title], description: params[:yearly_goal_1][:description])
+    when 'yearly_goal_2'
+      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_2][:title], description: params[:yearly_goal_2][:description])
+    when 'yearly_goal_3'
+      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_3][:title], description: params[:yearly_goal_3][:description])
     end
+    redirect_to new_quarterly_goal_path
   end
 
   def edit
@@ -47,6 +48,6 @@ class YearlygoalsController < ApplicationController
   end
 
   def yearlygoal_params
-    params.require(:yearlygoal).permit(:title, :description, :done)
+    params.require(:yearlygoal).permit(:title, :description, :done, )
   end
 end
