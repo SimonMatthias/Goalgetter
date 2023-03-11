@@ -1,40 +1,59 @@
- <div class="dashboard">
-   <div class= "side-navbar">
-     <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %>
-     <div class="nav-text">
-     <h2>Your goals</h2>
-       <%= link_to "5 Year goals", "/fiveyeargoals/details"%>
-       <%= link_to "Yearly goals", "/yearlygoals/details"%>
-       <%= link_to "Quarterly goals", "/quarterlygoals/details"%>
-       <%= link_to "Weekly tasks", "/weeklytasks/details"%>
-     <h2>More</h2>
-       <%= link_to "Browse community", "/community"%>
-       <%= link_to "Inspiration", "/inspiration" %>
-       <%= link_to "Settings", "/settings", class: "btn btn-white" %>
-       </div>
-   </div>
-<div class="dashboard-content">
-  <h1>Welcome Laura!</h1>
-  <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
-  <h2>Your weekly tasks:</h2>
-    <div class="card-to-do">
-      <div class="card-info">
-        <div class="card-to-do-title">
-          <% @weeklytodos.each do |weeklytodo| %>
-          <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-            <input id="weeklytodo" name="weeklytodo" type="checkbox" value="1" />
-            <label for="weeklytodo">
-              <h5><%= weeklytodo.title %></h5>
-            </label>
-        </div>
-          <p><%= weeklytodo.description %><p>
+ <head>
+      <style>
+        input.largerCheckbox {
+            height: 25px;
+            width: 25px;
+            background-color: red;
+            border: 5px solid red;
+        }
+    </style>
+ </head>
+<div class="dashboard">
+  <div class= "side-navbar">
+    <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %>
+    <div class="nav-text">
+      <%= link_to "Continue your setup", "#", class: "wizard-link" %>
+      <h2 class="nav-text">Your goals</h2>
+      <%= link_to "5 Year goals", "/fiveyeargoals/details", class: "link-section"%>
+      <%= link_to "Yearly goals", "/yearlygoals/details", class: "link-section"%>
+      <%= link_to "Quarterly goals", "/quarterlygoals/details",class: "link-section"%>
+      <%= link_to "Weekly tasks", "/weeklytasks/details", class: "link-section"%>
+      <h2 class="nav-text">More</h2>
+      <%= link_to "Browse community", "/community", class: "link-section"%>
+      <%= link_to "Inspiration", "/inspiration", class: "link-section"%>
+      <%= link_to "Settings", "/settings", class: "btn btn-white "%>
+    </div>
+  </div>
+  <div class="dashboard-content">
+    <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
+    <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
+    <h2>Your weekly tasks:</h2>
+    <% @weeklytodos.each do |weeklytodo| %>
+      <div class="card-to-do">
+        <div class="card-info">
+            <div class="card-to-do-title">
+            <%# <%= link_to weeklytodo_path(weeklytodo)do %>
+              <input class="largerCheckbox" name="weeklytodo" type="checkbox" value="false" />
+              <label for="weeklytodo">
+                <h5><%= weeklytodo.title %></h5>
+              </label>
           </div>
-          <div class="card-to-do-links">
+            <p><%= weeklytodo.description %><p>
+        </div>
+        <div class="card-to-do-links">
           <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
           <p>from quarterly goal</p>
           <%= button_to weeklytodo.quarterlygoal.title, quarterlygoals_path, class: "btn-white-red" %>
           <% end %>
-          </div>
+        </div>
     </div>
- </div>
+    <h2>Your quarterly goals:</h2>
+    <% @quarterlygoals.each do |quarterlygoal| %>
+      <div class="progress-card-small">
+          <%# <%= link_to weeklytodo_path(weeklytodo)do %>
+        <h5><%= quarterlygoal.title %></h5>
+        <p> <span style="color: #FFAB9B">6/16 </span> goals achieved</p>
+      <% end %>
+    </div>
+  </div>
 </div>

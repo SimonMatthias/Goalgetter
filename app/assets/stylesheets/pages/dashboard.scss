@@ -1,22 +1,20 @@
-.dashboard{
+.dashboard {
   background-image: url('assets/dashboard-bg.png');
-  // background-position: center;
-  // background-size: cover;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: left;
   gap: 16px;
   // padding: 40px;
-  height: 1080px;
-  width: 1440px;
   text-decoration: none;
 }
 
 .dashboard-content {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #blue-p {
-color: #64A4F4;
+  color: #64A4F4;
 }
