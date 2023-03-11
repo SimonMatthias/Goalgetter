@@ -19,13 +19,13 @@ class YearlygoalsController < ApplicationController
     @fiveyeargoal = current_user.fiveyeargoals.first
     case selected_goal
     when 'yearly_goal_1'
-      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_1][:title], description: params[:yearly_goal_1][:description])
+      @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_1][:title], description: params[:yearly_goal_1][:description])
     when 'yearly_goal_2'
-      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_2][:title], description: params[:yearly_goal_2][:description])
+      @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_2][:title], description: params[:yearly_goal_2][:description])
     when 'yearly_goal_3'
-      Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_3][:title], description: params[:yearly_goal_3][:description])
+      @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_3][:title], description: params[:yearly_goal_3][:description])
     end
-    redirect_to new_quarterly_goal_path
+    redirect_to new_yearlygoal_quarterlygoal_path(@yearlygoal)
   end
 
   def edit

@@ -11,21 +11,17 @@ class QuarterlygoalsController < ApplicationController
   end
 
   def new
+    @yearlygoal = current_user.yearlygoals.find(params[:yearlygoal_id])
     @quarterlygoal = Quarterlygoal.new
   end
 
   def create
-    @user = current_user
-    @quarterlygoal = Quarterlygoal.new(quarterlygoal_params)
-    @quarterlygoal.user = @user
-    if @quarterlygoal.save
-      # redirect_to yearlygoal_path(@ygoal) unclear about route
+    @yearlygoal = current_user.yearlygoals.find(params[:yearlygoal_id])
+    if @quarterlygoals = @yearlygoal.quarterlygoals.create(quarterlygoals_params[:quarterlygoals].values)
+      redirect_to dashboard_path
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -44,7 +40,7 @@ class QuarterlygoalsController < ApplicationController
     @quarterlygoal = Quarterlygoal.find(params[:id])
   end
 
-  def quarterlygoal_params
-    params.require(:quarterlygoal).permit(:title, :description, :done)
+  def quarterlygoals_params
+    params.permit(quarterlygoals: [:title, :description])
   end
 end
