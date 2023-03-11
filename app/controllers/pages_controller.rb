@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @weeklytodos = current_user.weeklytodos
+    @quarterlygoals = current_user.quarterlygoals
   end
 
 end
