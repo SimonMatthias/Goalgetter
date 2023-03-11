@@ -9,8 +9,26 @@
   padding: 40px;
 }
 
-.innerinfo {
-  max-width: 500px;
+.innerinfo-h {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.innerinfo-t {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 100px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 80px;
 }
 
 .long {
