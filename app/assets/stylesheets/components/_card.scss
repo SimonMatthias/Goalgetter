@@ -73,8 +73,9 @@
 .card-to-do-links {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
   align-items: end;
+  font-size: 12px;
+  gap: 1vh;
 }
 
 .progress-card-small {
@@ -83,13 +84,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 314px;
+  width: 40vh;
   border-radius: 8px;
-  padding: 16px;
+  padding: 3vh;
   gap: 24px;
 }
 
 .progress-card-small-info {
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -1,13 +1,20 @@
-.dashboard {
-  background-image: url('assets/dashboard-bg.png');
-  background-position: center;
+.dashboard-body {
+  background-image: url('assets/Dashboard-bg.png');
+  background-position: initial;
   background-size: cover;
+  background-repeat: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard {
   display: flex;
   flex-direction: row;
   justify-content: left;
   gap: 16px;
-  // padding: 40px;
+  padding: 2vh;
   text-decoration: none;
+  margin-top: 10.5vh;
 }
 
 .dashboard-content {
@@ -17,4 +24,25 @@
 
 #blue-p {
   color: #64A4F4;
+}
+
+.btn-blue .logout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  padding: 15px 16px;
+  gap: 8px;
+  height: 57px;
+  // width: 200px;
+}
+
+.nav-logout {
+  width: 200px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: top;
+  padding-right: 3vh;
+
 }
