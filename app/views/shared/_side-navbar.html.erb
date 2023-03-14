@@ -4,9 +4,12 @@
         <%= cl_image_tag("logo.png") %>
       <% end %>
     </div>
-    <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %>
-    <div class="nav-text">
-      <%= link_to "Continue your setup", "#", class: "wizard-link" %>
+    <div class="image-circle-nav">
+    <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %></div>
+    <div class="nav-text-container">
+      <div class="wizard-link-container">
+        <%= link_to "Goalwizard", "#", class: "wizard-link" %>
+      </div>
       <h2 class="nav-text">Your goals</h2>
       <%= link_to "5 Year goals", "/fiveyeargoals/details", class: "link-section"%>
       <%= link_to "Yearly goals", "/yearlygoals/details", class: "link-section"%>
@@ -15,6 +18,6 @@
       <h2 class="nav-text">More</h2>
       <%= link_to "Browse community", "/community", class: "link-section"%>
       <%= link_to "Inspiration", "/inspiration", class: "link-section"%>
-      <%= link_to "Settings", "/settings", class: "btn btn-white "%>
     </div>
+    <%= link_to "Settings", "/settings", class: "btn btn-white "%>
   </div>

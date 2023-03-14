@@ -1,25 +1,30 @@
-.dashboard-body {
-  background-image: url('assets/Dashboard-bg.png');
-  background-position: initial;
+body.dashboard {
+  background: url('background_dashboard.png') no-repeat center center fixed;
   background-size: cover;
-  background-repeat: none;
-  display: flex;
-  flex-direction: row;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
-.dashboard {
+.dashboard-container{
+  top: 0;
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  gap: 16px;
-  padding: 2vh;
-  text-decoration: none;
-  margin-top: 10.5vh;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
 }
 
 .dashboard-content {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  padding: 2vh;
+  text-decoration: none;
+  margin-top: 10.5vh;
 }
 
 #blue-p {
@@ -35,7 +40,6 @@
   padding: 15px 16px;
   gap: 8px;
   height: 57px;
-  // width: 200px;
 }
 
 .nav-logout {
@@ -44,5 +48,4 @@
   flex-direction: row-reverse;
   align-items: top;
   padding-right: 3vh;
-
 }

@@ -16,28 +16,28 @@ $headers-font: "Inter", "Nunito", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 
 h1 {
-  font-weight: 700;
+  font-weight: bolder;
   font-size: 48px;
   line-height: 58px;
   color: #64A4F4;
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 32px;
   line-height: 39px;
   color: #143434;
 }
 
 h3 {
-  font-weight: 400;
+  font-weight: medium;
   font-size: 24px;
   line-height: 29px;
   color: #143434;
 }
 
 h4 {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 24px;
   line-height: 29px;
   color: #143434;
@@ -45,13 +45,13 @@ h4 {
 
 h5 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: normal;
   line-height: 24px;
   color: #143434;
 }
 
 p {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: lighter;
   color: #143434;
 }
