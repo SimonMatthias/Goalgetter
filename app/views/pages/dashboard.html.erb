@@ -24,6 +24,7 @@
               </label>
           </div>
             <p><%= weeklytodo.description %><p>
+
           </div>
           <div class="card-to-do-links">
             <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
@@ -39,6 +40,7 @@
             <div class="progress-small" style="height:25%">
             </div>
           </div>
+
           <%# <%= link_to weeklytodo_path(weeklytodo)do %>
           <div class="progress-card-small-info">
             <h5><%= quarterlygoal.title %></h5>
