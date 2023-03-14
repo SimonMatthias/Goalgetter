@@ -43,7 +43,7 @@
         <div class="card-to-do-links">
           <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
           <p>from quarterly goal</p>
-          <%= button_to weeklytodo.quarterlygoal.title, quarterlygoals_path, class: "btn-white-red" %>
+          <%= button_to weeklytodo.quarterlygoal.title,  "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", class: "btn-white-red" %>
           <% end %>
         </div>
     </div>

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
-  resources :fiveyeargoals, only: [:new, :create]
-  resources :yearlygoals, only: [:new, :create] do
-    resources :quarterlygoals, only: [:new, :create]
+  resources :fiveyeargoals, only: [:new, :create, :index]
+  resources :yearlygoals, only: [ :new, :create, :index] do
+    resources :quarterlygoals
   end
   resources :weeklytodos
   get '/inspiration', to: 'pages#inspiration', as: :inspiration
