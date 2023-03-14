@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/inspiration', to: 'pages#inspiration', as: :inspiration
+  get '/community', to: 'pages#community', as: :community
 
   resources :fiveyeargoals, only: [:new, :create, :index]
   resources :yearlygoals, only: [ :new, :create, :index] do
     resources :quarterlygoals
   end
   resources :weeklytodos
-  get '/inspiration', to: 'pages#inspiration', as: :inspiration
 end
