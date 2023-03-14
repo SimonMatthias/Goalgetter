@@ -1,3 +1,4 @@
+<body class="fiveyear">
 <%= form_with(model: @form, url: fiveyeargoals_path, method: "post") do |form| %>
   <div class="form-group">
     <%= form.label :vision, "Imagine your life in five years. What do you see?" %>
@@ -18,3 +19,4 @@
 
   <%= form.submit "Save & Continue", class: "btn btn-primary" %>
 <% end %>
+</body>

@@ -10,5 +10,4 @@ class PagesController < ApplicationController
     @yearlygoals = current_user.yearlygoals
     @fiveyeargoals = current_user.fiveyeargoals
   end
-
 end
