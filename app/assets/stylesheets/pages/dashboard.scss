@@ -9,13 +9,12 @@ body.dashboard {
   position: relative;
   margin:0;
 }
-.container-fluid {
+#top-nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
   top: 0;
-  // height: 100%;
-  visibility: initial;
+  width: 100%;
 }
 
 .dashboard-container{
