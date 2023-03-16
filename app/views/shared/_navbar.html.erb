@@ -1,4 +1,4 @@
-<% unless params[:controller] == 'pages' && params[:action] == 'community' %>
+<% unless params[:controller] == 'pages' && params[:action] == 'community' || params[:action] == 'dashboard' %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <div class="container-fluid">
       <%= link_to "/", class: "navbar-brand" do %>
