@@ -1,0 +1,47 @@
+<body class="community">
+    <div class="community-navbar">
+      <div>
+        <%= link_to "/", class: "navbar-brand" do %>
+          <%= cl_image_tag("logo.png") %>
+        <% end %>
+      </div>
+      <div class="image-circle-nav">
+        <%= cl_image_tag current_user.photo.key, class: 'community-navbar-image' %>
+      </div>
+      <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+        <h4 style="color: #64A4F4">Filter:</h4>
+        <h4>Time</h4>
+        <%= radio_button_tag 'goal_type', '5_year', true, hidden: true %>
+        <%= label_tag '5_year', '5 Year goals', class: 'community-button-blue' %>
+        <%= radio_button_tag 'goal_type', 'yearly', false, hidden: true %>
+        <%= label_tag 'yearly', 'Yearly goals', class: 'community-button-blue' %>
+        <%= radio_button_tag 'goal_type', 'quarterly', false, hidden: true %>
+        <%= label_tag 'quarterly', 'Quarterly goals', class: 'community-button-blue' %>
+        <%= radio_button_tag 'goal_type', 'weekly', false, hidden: true %>
+        <%= label_tag 'weekly', 'Weekly tasks', class: 'community-button-blue' %>
+      </div>
+
+      <div style="display: flex; flex-direction: column; margin-bottom: 25px;">
+        <h4>Category</h4>
+        <%= radio_button_tag 'goal_category', 'financial', true, hidden: true %>
+        <%= label_tag 'Financial', 'Financial', class: 'community-button-red' %>
+        <%= radio_button_tag 'goal_category', 'career', false, hidden: true %>
+        <%= label_tag 'Career', 'Career', class: 'community-button-red' %>
+        <%= radio_button_tag 'goal_category', 'health', false, hidden: true %>
+        <%= label_tag 'Health', 'Health', class: 'community-button-red' %>
+        <%= radio_button_tag 'goal_category', 'personal', false, hidden: true %>
+        <%= label_tag 'Personal', 'Personal', class: 'community-button-red' %>
+      </div>
+
+
+      <div style="display: flex; flex-direction: column;">
+        <%= link_to "Back to Dashboard", dashboard_path, class: 'btn community-navbar-button-white' %>
+      </div>
+
+    </div>
+
+    <div class="community-content">
+      <h1>Community</h1>
+      <h2>Find goals of fellow Goalgetters</h2>
+    </div>
+</body>
