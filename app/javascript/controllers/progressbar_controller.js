@@ -13,11 +13,11 @@ export default class extends Controller {
     console.log("hello again?")
     if (this.checkTarget.checked == true && this.btnValueTarget.innerHTML == this.quarterlyTarget.innerHTML) {
     this.barTarget.style.height = "40%"
-    this.numericTarget.innerHTML += (1);
+    // this.numericTarget.innerHTML += (1);
     }
     else if (this.checkTarget.checked == false && this.btnValueTarget.innerHTML == this.quarterlyTarget.innerHTML) {
     this.barTarget.style.height = "10%";
-    this.numericTarget.innerHTML -= (1);
+    // this.numericTarget.innerHTML -= (1);
     }
 
 }
