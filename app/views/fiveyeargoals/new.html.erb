@@ -1,26 +1,26 @@
 <body class="fiveyear">
-<%= form_with(model: @form, url: fiveyeargoals_path, method: "post", html: { class: "goal-form" }) do |form| %>
-  <div class="question-box">
-    <div class="form-group">
-      <h1 class="goal-form-title">Imagine your life in five years. What do you see?</h1>
-      <%= form.label :vision, "Vision", class: "sr-only" %>
-      <%= form.text_area :vision, rows: 3, class: "form-control", required: true, aria_label: "Imagine your life in five years. What do you see?" %>
+  <%= form_with(model: @form, url: fiveyeargoals_path, method: "post", html: { class: "goal-form" }) do |form| %>
+    <div class="container">
+      <div class="question-box">
+        <div class="form-group">
+          <h1 class="goal-form-title">Imagine your life in five years. What do you see?</h1>
+          <%= form.label :vision, "Vision", class: "sr-only" %>
+          <%= form.text_area :vision, rows: 3, class: "answer-box", required: true, aria_label: "Imagine your life in five years. What do you see?" %>
+        </div>
+
+        <h1 class="goal-form-title">What are the three goals you need to achieve, to make your dream life come true?</h1>
+
+        <% 3.times do |i| %>
+          <div class="form-group">
+            <%= form.text_field "title_#{i + 1}", class: "answer-box", required: true, placeholder: "Goal #{i + 1} Title" %>
+          </div>
+          <div class="form-group">
+            <%= form.text_area "description_#{i + 1}", rows: 3, class: "answer-box", required: true, placeholder: "Goal Description #{i +1}" %>
+          </div>
+        <% end %>
+
+        <%= form.submit "Save & Continue", class: "btn btn-primary" %>
+      </div>
     </div>
-
-    <h1 class="goal-form-title">What are the three goals you need to achieve, to make your dream life come true?</h1>
-
-    <% 3.times do |i| %>
-      <div class="form-group">
-        <%= form.label "title_#{i + 1}", "Goal #{i + 1} Title" %>
-        <%= form.text_field "title_#{i + 1}", class: "form-control", required: true %>
-      </div>
-      <div class="form-group">
-        <%= form.label "description_#{i + 1}", "Goal #{i + 1} Description" %>
-        <%= form.text_area "description_#{i + 1}", rows: 3, class: "form-control", required: true %>
-      </div>
-    <% end %>
-
-    <%= form.submit "Save & Continue", class: "btn btn-primary" %>
-  </div>
-<% end %>
+  <% end %>
 </body>

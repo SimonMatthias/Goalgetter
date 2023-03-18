@@ -3,6 +3,10 @@ class FiveyeargoalsController < ApplicationController
     @form = FiveyeargoalsForm.new(Fiveyeargoal.new)
   end
 
+  def index
+    @fiveyeargoals = Fiveyeargoal.all
+  end
+
   def create
     if Fiveyeargoal.create(
       [
@@ -15,6 +19,10 @@ class FiveyeargoalsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    @fiveyeargoals = Fiveyeargoal.all
   end
 
   private

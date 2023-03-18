@@ -10,4 +10,11 @@ class PagesController < ApplicationController
     @yearlygoals = current_user.yearlygoals
     @fiveyeargoals = current_user.fiveyeargoals
   end
+
+  def community
+    @fiveyeargoals = Fiveyeargoal.all
+    @yearlygoals = Yearlygoal.all
+    @quarterlygoals = Quarterlygoal.all
+    @weeklytodos = Weeklytodo.all
+  end
 end

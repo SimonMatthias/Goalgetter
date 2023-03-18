@@ -11,10 +11,10 @@
         <%= link_to "Goalwizard", "#", class: "wizard-link" %>
       </div>
       <h2 class="nav-text">Your goals</h2>
-      <%= link_to "5 Year goals", "/fiveyeargoals/details", class: "link-section"%>
-      <%= link_to "Yearly goals", "/yearlygoals/details", class: "link-section"%>
-      <%= link_to "Quarterly goals", "/quarterlygoals/details",class: "link-section"%>
-      <%= link_to "Weekly tasks", "/weeklytasks/details", class: "link-section"%>
+      <%= link_to "5 Year goals", fiveyeargoals_path, class: "link-section"%>
+      <%= link_to "Yearly goals", yearlygoals_path, class: "link-section"%>
+      <%= link_to "Quarterly goals","yearlygoals/:yearlygoal_id/quarterlygoals", class: "link-section"%>
+      <%= link_to "Weekly tasks", weeklytodos_path, class: "link-section"%>
       <h2 class="nav-text">More</h2>
       <%= link_to "Browse community", "/community", class: "link-section"%>
       <%= link_to "Inspiration", "/inspiration", class: "link-section"%>
