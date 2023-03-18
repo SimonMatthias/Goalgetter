@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import PhotoPreviewController from "./photo_preview_controller"
 application.register("photo-preview", PhotoPreviewController)
+
+import ProgressbarController from "./progressbar_controller"
+application.register("progressbar", ProgressbarController)

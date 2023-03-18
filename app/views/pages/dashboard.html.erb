@@ -1,55 +1,59 @@
-<head>
-  <style>
-    input.largerCheckbox {
-    height: 20px;
-    width: 20px;
-    }
-  </style>
-</head>
 <body class="dashboard">
-  <div class="dashboard-container">
+  <head>
+    <style>
+      input.largerCheckbox {
+      height: 20px;
+      width: 20px;
+      }
+    </style>
+  </head>
   <%= render "shared/side-navbar" %>
+  <div class="container-fluid" id="top-nav">
+    <div class="nav-logout" id="dashboard-logout">
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login"%>
+    </div>
+  </div>
+  <div class="dashboard-container" data-controller="progressbar">
     <div class="dashboard-content">
-    <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
-    <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
-    <h2>Your weekly tasks:</h2>
-    <% @weeklytodos.each do |weeklytodo| %>
-    <div class="card-to-do">
-      <div class="card-info">
-        <div class="card-to-do-title">
-          <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-            <input class="checkbox" name="weeklytodo" type="checkbox"/>
-              <label for="weeklytodo">
-                <h5><%= weeklytodo.title %></h5>
-              </label>
-          </div>
-            <p><%= weeklytodo.description %><p>
-
+      <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
+      <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
+      <h2>Your weekly tasks:</h2>
+      <% @weeklytodos.each do |weeklytodo| %>
+      <div class="card-to-do">
+        <div class="card-info">
+          <div class="card-to-do-title">
+            <%# <%= link_to weeklytodo_path(weeklytodo)do %>
+              <input data-progressbar-target="check" class="checkbox" name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight"/>
+                <label for="weeklytodo">
+                  <h5><%= weeklytodo.title %></h5>
+                </label>
+            <%# </div> %>
+              <p><%= weeklytodo.description %><p>
           </div>
           <div class="card-to-do-links">
-            <%= link_to(image_tag("edit.png", style: 'height:30px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
+            <%= link_to(image_tag("edit.png", style: 'height:40px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
             <%="from quarterly goal"%>
-            <%= button_to weeklytodo.quarterlygoal.title, "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", class: "btn-white-red" %>
+            <%= button_to "#{weeklytodo.quarterlygoal.title}", "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", :class => "btn-white-red" , data: {
+            "progressbar-target"=>"btnValue", } %>
             <% end %>
+            </div>
           </div>
-      </div>
+        </div>
       <h2>Your quarterly goals:</h2>
       <% @quarterlygoals.each do |quarterlygoal| %>
+      <div class="card-to-do-links">
         <div class="progress-card-small">
           <div class="progressbar-small">
-            <div class="progress-small" style="height:25%">
+            <div class="progress-small" data-progressbar-target="bar">
             </div>
           </div>
 
           <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-          <div class="progress-card-small-info">
-            <h5><%= quarterlygoal.title %></h5>
-            <p>achieved goals: <span style="color: #FFAB9B"> 6/16 </span> </p>
+          <div class="progress-card-small-info" >
+            <h5 data-progressbar-target="quarterly"><%= quarterlygoal.title %></h5>
+            <p>achieved goals: <span style="color: #FFAB9B"> <div data-progressbar-target="numeric">6</div> /13 </span> </p>
           </div>
       <% end %>
-      </div>
+        </div>
   </div>
-    <div class="nav-logout">
-      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login", style: "margin-top: 2vh" %>
-    </div>
 </body>

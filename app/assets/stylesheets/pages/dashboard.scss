@@ -6,13 +6,22 @@ body.dashboard {
   -o-background-size: cover;
   height: 100%;
   width: 100%;
-  position: fixed;
+  position: relative;
+  margin:0;
+}
+#top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  top: 0;
+  width: 100%;
 }
 
 .dashboard-container {
+  margin-left: 38vh;
   top: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0;
   height: 100%;
   justify-content: center;
@@ -20,18 +29,19 @@ body.dashboard {
 
 .dashboard-content {
   display: flex;
+  margin-left: 40vh;
   flex-direction: column;
   gap: 16px;
-  padding: 2vh;
+  // padding: 2vh;
   text-decoration: none;
-  margin-top: 10.5vh;
+  // margin-top: 10.5vh;
 }
 
 #blue-p {
   color: #64A4F4;
 }
 
-.btn-blue .logout {
+.logout {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -40,12 +50,4 @@ body.dashboard {
   padding: 15px 16px;
   gap: 8px;
   height: 57px;
-}
-
-.nav-logout {
-  width: 200px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: top;
-  padding-right: 3vh;
 }
