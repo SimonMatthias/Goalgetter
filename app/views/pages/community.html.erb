@@ -1,4 +1,4 @@
-<body class="community">
+<body class="community" data-controller="insertgoals">
     <div class="community-navbar">
       <div>
         <%= link_to "/", class: "navbar-brand" do %>
@@ -8,40 +8,69 @@
       <div class="image-circle-nav">
         <%= cl_image_tag current_user.photo.key, class: 'community-navbar-image' %>
       </div>
-      <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+      <div style="display: flex; flex-direction: column; margin-bottom: 25px;">
         <h4 style="color: #64A4F4">Filter:</h4>
         <h4>Time</h4>
-        <%= radio_button_tag 'goal_type', '5_year', true, hidden: true %>
-        <%= label_tag '5_year', '5 Year goals', class: 'community-button-blue' %>
-        <%= radio_button_tag 'goal_type', 'yearly', false, hidden: true %>
-        <%= label_tag 'yearly', 'Yearly goals', class: 'community-button-blue' %>
-        <%= radio_button_tag 'goal_type', 'quarterly', false, hidden: true %>
-        <%= label_tag 'quarterly', 'Quarterly goals', class: 'community-button-blue' %>
-        <%= radio_button_tag 'goal_type', 'weekly', false, hidden: true %>
-        <%= label_tag 'weekly', 'Weekly tasks', class: 'community-button-blue' %>
+        <%= label_tag '5_year', '5 Year goals', class: 'community-button-blue community-button-blue-selected', id: "fiveyear", data: {action:"click->insertgoals#changegoals", insertgoals_target:"button"} %>
+        <%= label_tag 'yearly', 'Yearly goals', class: 'community-button-blue', id: "yearly", data: {action:"click->insertgoals#changegoals", insertgoals_target:"button"} %>
+        <%= label_tag 'quarterly', 'Quarterly goals', class: 'community-button-blue',id: "quarterly", data: {action:"click->insertgoals#changegoals", insertgoals_target:"button"} %>
+        <%= label_tag 'weekly', 'Weekly tasks', class: 'community-button-blue', id: "weekly", data: {action:"click->insertgoals#changegoals", insertgoals_target:"button"} %>
       </div>
-
-      <div style="display: flex; flex-direction: column; margin-bottom: 25px;">
-        <h4>Category</h4>
-        <%= radio_button_tag 'goal_category', 'financial', true, hidden: true %>
-        <%= label_tag 'Financial', 'Financial', class: 'community-button-red' %>
-        <%= radio_button_tag 'goal_category', 'career', false, hidden: true %>
-        <%= label_tag 'Career', 'Career', class: 'community-button-red' %>
-        <%= radio_button_tag 'goal_category', 'health', false, hidden: true %>
-        <%= label_tag 'Health', 'Health', class: 'community-button-red' %>
-        <%= radio_button_tag 'goal_category', 'personal', false, hidden: true %>
-        <%= label_tag 'Personal', 'Personal', class: 'community-button-red' %>
-      </div>
-
 
       <div style="display: flex; flex-direction: column;">
-        <%= link_to "Back to Dashboard", dashboard_path, class: 'btn community-navbar-button-white' %>
+        <%= link_to "Back to Dashboard", dashboard_path, class: 'community-button-red' %>
       </div>
-
     </div>
 
     <div class="community-content">
       <h1>Community</h1>
-      <h2>Find goals of fellow Goalgetters</h2>
+      <h3>Find goals of fellow Goalgetters</h3>
+      <div class="goal-list">
+        <ul style="list-style: none">
+        <div class="" id="fiveyear" data-insertgoals-target="list">
+          <h4 style="color: #64A4F4">5 year goals</h4>
+          <% @fiveyeargoals.each do |goal| %>
+            <li>
+              <div class="goal-card">
+                <p><span style="color: #F57B6E;"><%= goal.user.user_name %></span>: <%= goal.title %> - <%= goal.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </div>
+
+        <div class="d-none" id="yearly" data-insertgoals-target="list">
+          <h4 style="color: #64A4F4">Yearly goals</h4>
+          <% @yearlygoals.each do |goal| %>
+            <li>
+              <div class="goal-card">
+                <p><span style="color: #F57B6E;"><%= goal.fiveyeargoal.user.user_name %></span>: <%= goal.title %> - <%= goal.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </div>
+
+        <div class="d-none" id="quarterly" data-insertgoals-target="list">
+          <h4 style="color: #64A4F4">Quarterly goals</h4>
+          <% @quarterlygoals.each do |goal| %>
+            <li>
+              <div class="goal-card">
+                <p><span style="color: #F57B6E;"><%= goal.yearlygoal.fiveyeargoal.user.user_name %></span>: <%= goal.title %> - <%= goal.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </div>
+
+        <div class="d-none" id="weekly" data-insertgoals-target="list">
+          <h4 style="color: #64A4F4">Weekly tasks</h4>
+          <% @weeklytodos.each do |goal| %>
+            <li>
+              <div class="goal-card">
+                <p><span style="color: #F57B6E;"><%= goal.quarterlygoal.yearlygoal.fiveyeargoal.user.user_name %></span>: <%= goal.title %> - <%= goal.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </div>
+      </ul>
     </div>
+  </div>
 </body>
