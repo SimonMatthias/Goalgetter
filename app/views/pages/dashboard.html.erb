@@ -27,7 +27,7 @@
                 <label for="weeklytodo">
                   <h5><%= weeklytodo.title %></h5>
                 </label>
-            </div>
+            <%# </div> %>
               <p><%= weeklytodo.description %><p>
           </div>
           <div class="card-to-do-links">
@@ -35,7 +35,6 @@
             <%="from quarterly goal"%>
             <%= button_to "#{weeklytodo.quarterlygoal.title}", "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", :class => "btn-white-red" , data: {
             "progressbar-target"=>"btnValue", } %>
-            </div>
             <% end %>
             </div>
           </div>
@@ -53,9 +52,7 @@
             <h5 data-progressbar-target="quarterly"><%= quarterlygoal.title %></h5>
             <p>achieved goals: <span style="color: #FFAB9B"> <div data-progressbar-target="numeric">6</div> /13 </span> </p>
           </div>
+      <% end %>
         </div>
-      </div>
-       <% end %>
-    </div>
   </div>
 </body>
