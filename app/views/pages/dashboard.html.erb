@@ -16,7 +16,7 @@
   <div class="dashboard-container" data-controller="progressbar">
     <div class="dashboard-content">
       <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
-      <p>Keep up the good work, you already accomplished <span style="color: #64A4F4"> 25% </span>of your goals!</p>
+      <p>Keep up the good work, you already accomplished <span style="color:#64A4F4;font-size:46px;"data-progressbar-target="topNumber">25</span>percent of your goals!</p>
       <h2>Your weekly tasks:</h2>
       <% @weeklytodos.each do |weeklytodo| %>
       <div class="card-to-do">
@@ -44,10 +44,9 @@
       <div class="card-to-do-links">
         <div class="progress-card-small">
           <div class="progressbar-small">
-            <div class="progress-small" data-progressbar-target="bar">
+            <div class="progress-small" data-height="0" data-progressbar-target="bar">
             </div>
           </div>
-
           <%# <%= link_to weeklytodo_path(weeklytodo)do %>
           <div class="progress-card-small-info" >
             <h5 data-progressbar-target="quarterly"><%= quarterlygoal.title %></h5>
