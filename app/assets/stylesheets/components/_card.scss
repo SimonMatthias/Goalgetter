@@ -64,10 +64,12 @@
   border-radius: 8px;
 }
 
-.card-to-do-title {
+.card-info {
   display: flex;
   flex-direction: row;
-  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
 }
 
 .card-to-do-links {
@@ -75,7 +77,7 @@
   flex-direction: column;
   align-items: end;
   font-size: 12px;
-  gap: 1vh;
+  gap: 0.3vh;
 }
 
 .progress-card-small {
@@ -84,10 +86,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40vh;
+  align-items: center;
+  width: 32vh;
   border-radius: 8px;
   padding: 3vh;
-  gap: 16px;
+  // gap: 1vh;
 }
 
 .progress-card-small-info {
