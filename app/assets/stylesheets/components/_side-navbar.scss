@@ -1,6 +1,6 @@
 .side-navbar {
   position: fixed;
-  width: 38vh;
+  width: 32vh;
   display: flex;
   flex-direction: column;
 
@@ -63,6 +63,7 @@
   text-decoration: none;
   width: 44vh;
   display: flex;
+  font-weight: 300;
 }
 
 .link-section:hover {

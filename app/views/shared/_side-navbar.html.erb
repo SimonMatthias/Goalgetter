@@ -5,7 +5,7 @@
       <% end %>
     </div>
     <div class="image-circle-nav">
-    <%= cl_image_tag("testimonial3.png", width: 381, height: 384, class: 'image-circle') %></div>
+    <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle')</div>
     <div class="nav-text-container">
       <div class="wizard-link-container">
         <%= link_to "Goalwizard", "#", class: "wizard-link" %>
