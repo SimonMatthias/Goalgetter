@@ -8,6 +8,7 @@ class FiveyeargoalsController < ApplicationController
   end
 
   def create
+    raise
     if Fiveyeargoal.create(
       [
         { vision: form_params[:vision], title: form_params[:title_1], description: form_params[:description_1], user: current_user },
@@ -15,6 +16,7 @@ class FiveyeargoalsController < ApplicationController
         { vision: form_params[:vision], title: form_params[:title_3], description: form_params[:description_3], user: current_user }
       ]
     )
+    raise
       redirect_to new_yearlygoal_path
     else
       render :new
