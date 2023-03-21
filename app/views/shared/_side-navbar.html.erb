@@ -1,23 +1,27 @@
-  <div class= "side-navbar">
+<body data-controller="link" data-action="load@window->link#changeLink">
+  <div class= "side-navbar" data-link-target="sideNav">
     <div class="logo-dashboard">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= cl_image_tag("logo.png") %>
       <% end %>
     </div>
     <div class="image-circle-nav">
-    <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle')</div>
+     <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle') %>
+    </div>
     <div class="nav-text-container">
       <div class="wizard-link-container">
-        <%= link_to "Goalwizard", "#", class: "wizard-link" %>
+        <%= link_to "Goalwizard", new_fiveyeargoal_path, class: "wizard-link" %>
       </div>
       <h2 class="nav-text">Your goals</h2>
-      <%= link_to "5 Year goals", fiveyeargoals_path, class: "link-section"%>
-      <%= link_to "Yearly goals", yearlygoals_path, class: "link-section"%>
-      <%= link_to "Quarterly goals","yearlygoals/:yearlygoal_id/quarterlygoals", class: "link-section"%>
-      <%= link_to "Weekly tasks", weeklytodos_path, class: "link-section"%>
+      <%= link_to "Dashboard" , dashboard_path, :class => "link-section d-none", data: {"data-link-target"=>"linkTo"}%>
+      <%= link_to "5 Year goals", fiveyeargoals_path, :class => "link-section", data: {"data-link-target"=>"linkTo1"}%>
+      <%= link_to "Yearly goals", yearlygoals_path, :class => "link-section", data: {"data-link-target"=>"linkTo2"}%>
+      <%= link_to "Quarterly goals","yearlygoals/:yearlygoal_id/quarterlygoals", :class => "link-section", data: {"data-link-target"=>"linkTo3"}%>
+      <%= link_to "Weekly tasks", weeklytodos_path, :class => "link-section", data: {"data-link-target"=>"linkTo4"}%>
       <h2 class="nav-text">More</h2>
       <%= link_to "Browse community", "/community", class: "link-section"%>
       <%= link_to "Inspiration", "/inspiration", class: "link-section"%>
     </div>
     <%= link_to "Settings", "/settings", class: "btn btn-white"%>
   </div>
+  <%# </body> %>
