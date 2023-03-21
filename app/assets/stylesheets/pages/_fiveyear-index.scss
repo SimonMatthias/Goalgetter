@@ -8,3 +8,15 @@
   width: 100%;
   position: fixed;
 }
+.dashboard-content-index {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40vh;
+  justify-content: space-evenly;
+  height: 100%;
+  padding-bottom: 2.8vh;
+}
+.progress-container {
+  display: flex;
+  flex-direction: column;
+}

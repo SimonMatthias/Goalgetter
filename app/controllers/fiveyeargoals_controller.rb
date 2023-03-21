@@ -21,12 +21,6 @@ class FiveyeargoalsController < ApplicationController
     end
   end
 
-  def index
-    @fiveyeargoals = Fiveyeargoal.all
-  end
-
-   #test
-   
   private
 
   def form_params

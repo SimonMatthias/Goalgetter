@@ -1,8 +1,27 @@
 <body class="details-index">
   <%= render "shared/side-navbar" %>
-  <div class="dashboard-content">
+  <div class="container-fluid" id="top-nav">
+    <div class="nav-logout" id="dashboard-logout">
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login"%>
+    </div>
   </div>
-  <div class="nav-logout">
-  <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login", style: "margin-top: 2vh" %>
+  <div class="dashboard-content-index">
+    <h1>Your Quarterly goals</h1>
+    <div class="medium-cards-container">
+      <% current_user.quarterlygoals.each do |quarterlygoal| %>
+          <div class="index-card">
+          <h2><%=quarterlygoal.title %></h2>
+          <p><%=quarterlygoal.description %></p>
+          <%= link_to(image_tag("edit.png", style: 'height:40px; width:auto;'), "/yearlygoals/:yearlygoal_id/quarterlygoals/:id/edit", :method => :get) %>
+          </div>
+      <% end %>
+    </div>
+    <div class="progress-container">
+      <h4> Your overall progress: <span style="color: #FFAB9B"> 10% </span></h4>
+      <div class="progressbar-tall" id="quarterly">
+        <div class="progress-tall" id="quarterly-progress">
+        </div>
+      </div>
+    </div>
   </div>
 <body>
