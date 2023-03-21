@@ -6,7 +6,11 @@
       <% end %>
     </div>
     <div class="image-circle-nav">
-     <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle') %>
+      <% if current_user.photo.blank? %>
+        <%= image_tag "default_avatar.png", width: 381, height: 384, class: 'image-circle' %>
+      <% else %>
+        <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle') %>
+      <% end %>
     </div>
     <div class="nav-text-container">
       <div class="wizard-link-container">
