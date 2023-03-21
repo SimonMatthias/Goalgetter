@@ -13,6 +13,9 @@ application.register("hello", HelloController)
 import InsertgoalsController from "./insertgoals_controller"
 application.register("insertgoals", InsertgoalsController)
 
+import LinkController from "./link_controller"
+application.register("link", LinkController)
+
 import PhotoPreviewController from "./photo_preview_controller"
 application.register("photo-preview", PhotoPreviewController)
 

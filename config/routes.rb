@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get '/inspiration', to: 'pages#inspiration', as: :inspiration
   get '/community', to: 'pages#community', as: :community
 
-  resources :fiveyeargoals, only: [:new, :create, :index]
-  resources :yearlygoals, only: [ :new, :create, :index] do
+  resources :fiveyeargoals, only: [:new, :create, :index, :edit]
+  resources :yearlygoals, only: [ :new, :create, :index, :edit] do
     resources :quarterlygoals
   end
   resources :weeklytodos

@@ -1,8 +1,27 @@
 <body class="details-index">
   <%= render "shared/side-navbar" %>
-  <div class="dashboard-content">
+  <div class="container-fluid" id="top-nav">
+    <div class="nav-logout" id="dashboard-logout">
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login"%>
+    </div>
   </div>
-  <div class="nav-logout">
-  <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-blue login", style: "margin-top: 2vh" %>
+  <div class="dashboard-content-index">
+    <h1>Your Weekly tasks</h1>
+    <div class="medium-cards-container">
+      <% current_user.weeklytodos.each do |weeklytodo| %>
+          <div class="index-card">
+          <h2><%=weeklytodo.title %></h2>
+          <p><%=weeklytodo.description %></p>
+          <%= link_to(image_tag("edit.png", style: 'height:40px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
+          </div>
+      <% end %>
+    </div>
+    <div class="progress-container">
+      <h4> Your overall progress: <span style="color: #64A4F4"> 10% </span></h4>
+      <div class="progressbar-tall" id="weekly">
+        <div class="progress-tall" id="weekly-progress">
+        </div>
+      </div>
+    </div>
   </div>
 <body>

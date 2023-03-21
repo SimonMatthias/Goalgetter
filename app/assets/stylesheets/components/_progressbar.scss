@@ -15,3 +15,51 @@
   border-radius: 1vh;
   height: 6vh;
 }
+
+
+.progressbar-tall {
+  background-color: white;
+  border: 1px solid #2376C1;
+  padding: 0;
+  border-radius: inherit;
+  height: 6vh;
+  width: 136vh;
+  display: flex;
+  flex-direction: row;
+  border-radius: 7px;
+}
+
+.progress-tall {
+  background-color: #2376C1;
+  padding: 0%;
+  border-radius: 4px;
+  height: 5,5vh;
+  width: 26%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#yearly {
+  border: 1px solid #BD4A42;
+}
+
+#yearly-progress {
+    background-color: #BD4A42;
+}
+
+#quarterly {
+  border: 1px solid #FFAB9B;
+}
+
+#quarterly-progress {
+  background-color: #FFAB9B;
+}
+
+#weekly {
+  border: 1px solid #64A4F4;;
+}
+
+#weekly-progress {
+  background-color: #64A4F4;;
+}
