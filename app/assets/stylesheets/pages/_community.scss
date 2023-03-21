@@ -57,7 +57,7 @@ body.community {
   border-radius: 8px;
   font-weight: 600;
   background: linear-gradient(#9AD5FF, #64A4F4);
-  border: 1px solid #64A4F4;
+  border: 1px solid #64A4F4 !important;
   margin: 4px;
   display: inline-block;
   padding: 8px 16px;
@@ -82,6 +82,8 @@ body.community {
   margin-right: 350px;
   margin-top: 20px;
   padding: 10px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 .goal-card {
