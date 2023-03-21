@@ -14,11 +14,9 @@ export default class extends Controller {
     var bar = this.barTarget
     var barId = this.barTarget.id
 
-    if (boxCheck == true && barId  == btnValue) {
-      if (bar.dataset.height <= 90 && bar.dataset.height <= 90) {
-        bar.style.height =  heightFloat + 10 + '%'
-        heightFloat=  parseFloat(heightFloat) + 10
-      }
+    if (checked == true && barId  == btnValue) {
+      bar.style.height =  parseFloat(bar.dataset.height) + 10 + '%'
+      bar.dataset.height =  parseFloat(bar.dataset.height) + 10
       if (numeric <= 12) {
         numeric ++;
         this.numericTarget.textContent = numeric
