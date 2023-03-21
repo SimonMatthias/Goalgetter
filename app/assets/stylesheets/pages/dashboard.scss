@@ -31,10 +31,10 @@ body.dashboard {
   display: flex;
   margin-left: 40vh;
   flex-direction: column;
-  gap: 16px;
+  gap: 0.5vh;
   // padding: 2vh;
   text-decoration: none;
-  // margin-top: 10.5vh;
+  margin-top: 0;
 }
 
 #blue-p {
@@ -50,4 +50,25 @@ body.dashboard {
   padding: 15px 16px;
   gap: 8px;
   height: 57px;
+}
+
+.card-small-container {
+  display: flex;
+  margin-left: 40vh;
+  flex-direction: column;
+  gap: 0.5vh;
+  padding-top: 2vh;
+  text-decoration: none;
+}
+
+.quarterly-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
 }

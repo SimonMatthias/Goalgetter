@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DashboardNumericController from "./dashboard_numeric_controller"
+application.register("dashboard-numeric", DashboardNumericController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -2,37 +2,35 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="progressbar"
 export default class extends Controller {
-  static targets =['check', 'bar', 'btnValue', 'quarterly', 'numeric', 'topNumber']
+  static targets =['check', 'bar', 'btnValue', 'numeric',]
 
   connect() {
   }
 
-
-
   changeHeight () {
-    var numeric = parseFloat(this.numericTarget.innerHTML)
-    var numericTotal= parseFloat(this.topNumberTarget.textContent)
-    // console.log(numericTotal, "aha")
+    var numeric = this.numericTarget.innerHTML
+    var checked = this.checkTarget.checked
+    var btnValue = this.btnValueTarget.innerHTML
+    var bar = this.barTarget
+    var barId = this.barTarget.id
 
-    if (this.checkTarget.checked == true && this.btnValueTarget.innerHTML == this.quarterlyTarget.innerHTML) {
-      this.barTarget.style.height =  parseFloat(this.barTarget.dataset.height) + 10 + '%'
-      this.barTarget.dataset.height =  parseFloat(this.barTarget.dataset.height) + 10
-      numeric ++;
-      this.numericTarget.textContent = numeric
-      numericTotal ++;
-      this.topNumberTarget.textContent = numericTotal
+    if (boxCheck == true && barId  == btnValue) {
+      if (bar.dataset.height <= 90 && bar.dataset.height <= 90) {
+        bar.style.height =  heightFloat + 10 + '%'
+        heightFloat=  parseFloat(heightFloat) + 10
+      }
+      if (numeric <= 12) {
+        numeric ++;
+        this.numericTarget.textContent = numeric
+      }
     }
-    else if (this.checkTarget.checked == false && this.btnValueTarget.innerHTML == this.quarterlyTarget.innerHTML) {
-      this.barTarget.style.height =  parseFloat(this.barTarget.dataset.height) - 10 + '%'
-      this.barTarget.dataset.height =  parseFloat(this.barTarget.dataset.height) - 10
-      // console.log("else")
-      numeric --;
-      this.numericTarget.textContent = numeric
-
-      numericTotal --
-      this.topNumberTarget.textContent = numericTotal
+    else if (checked == false && btnValue == barId) {
+      bar.style.height =  parseFloat(bar.dataset.height) - 10 + '%'
+      bar.dataset.height =  parseFloat(bar.dataset.height) - 10
+      if (numeric >= 1){
+        numeric --;
+        this.numericTarget.textContent = numeric
+      }
     }
-
   }
-
 }

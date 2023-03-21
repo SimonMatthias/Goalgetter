@@ -14,45 +14,48 @@
     </div>
   </div>
   <div class="dashboard-container" data-controller="progressbar">
-    <div class="dashboard-content">
-      <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
-      <p>Keep up the good work, you already accomplished <span style="color:#64A4F4;font-size:46px;"data-progressbar-target="topNumber">25</span>percent of your goals!</p>
+    <div class="dashboard-content" data-controller="dashboard-numeric">
+      <div class="greeting">
+        <h1><span style="color: #143434;">Welcome </span><%= current_user.first_name %>!</h1>
+        <p>Keep up the good work, you already accomplished <span style="color:#64A4F4;font-size:24px;" data-dashboard-numeric-target="topNumber">25 </span>percent of your goals!</p>
+      </div>
       <h2>Your weekly tasks:</h2>
       <% @weeklytodos.each do |weeklytodo| %>
-      <div class="card-to-do">
+        <div class="card-to-do">
         <div class="card-info">
-          <div class="card-to-do-title">
+          <input data-dashboard-numeric-target="check1" data-progressbar-target="check" id="<%=weeklytodo.quarterlygoal.title%>" class="largerCheckbox"  name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight click->dashboard-numeric#changeNumber"/>
+        <div class="card-to-do-title">
             <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-              <input data-progressbar-target="check" class="checkbox" name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight"/>
-                <label for="weeklytodo">
-                  <h5><%= weeklytodo.title %></h5>
-                </label>
-            <%# </div> %>
+              <h5><%= weeklytodo.title %></h5>
               <p><%= weeklytodo.description %><p>
+          </div>
           </div>
           <div class="card-to-do-links">
             <%= link_to(image_tag("edit.png", style: 'height:40px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
             <%="from quarterly goal"%>
             <%= button_to "#{weeklytodo.quarterlygoal.title}", "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", :class => "btn-white-red" , data: {
             "progressbar-target"=>"btnValue", } %>
-            <% end %>
-            </div>
           </div>
         </div>
+      <% end %>
+    </div>
+    <div class="card-small-container">
       <h2>Your quarterly goals:</h2>
+      <div class="quarterly-container" >
       <% @quarterlygoals.each do |quarterlygoal| %>
-      <div class="card-to-do-links">
         <div class="progress-card-small">
-          <div class="progressbar-small">
-            <div class="progress-small" data-height="0" data-progressbar-target="bar">
+          <div class="progressbar-small" >
+            <div class="progress-small" id="<%=quarterlygoal.title%>" data-height="0"  style="height: 0%" data-progressbar-target="bar">
             </div>
           </div>
           <%# <%= link_to weeklytodo_path(weeklytodo)do %>
-          <div class="progress-card-small-info" >
-            <h5 data-progressbar-target="quarterly"><%= quarterlygoal.title %></h5>
-            <p>achieved goals: <span style="color: #FFAB9B"> <div data-progressbar-target="numeric">6</div> /13 </span> </p>
+          <div class="progress-card-small-info">
+            <h5><%= quarterlygoal.title %></h5>
+            <p>achieved goals: <span data-progressbar-target="numeric" style="color: #FFAB9B">
+            0</span>/13</p>
+          </div>
           </div>
       <% end %>
-        </div>
+    </div>
   </div>
 </body>
