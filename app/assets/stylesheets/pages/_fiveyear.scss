@@ -1,14 +1,32 @@
 body.fiveyear {
   background: url('fiveyear.png') no-repeat center center fixed;
-  object-fit: scale-down;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 body.new_quarterly {
   background: url('wizard_quarterly.png') no-repeat center center fixed;
-  object-fit: scale-down;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 
 body.new_yearly {
   background: url('wizard_yearly.png') no-repeat center center fixed;
-  object-fit: scale-down;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
