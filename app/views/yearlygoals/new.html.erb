@@ -1,44 +1,46 @@
-<div class="container">
-  <div class="question-box">
-    <div class="form-group">
-      <h1 class="goal-form-title">What are the three things you can do to get closer to your first five-year goal?</h1>
-      <%= form_with(url: yearlygoals_path, method: 'post') do |form| %>
-        <div>
-          <%= form.text_field :'yearly_goal_1[title]', placeholder: "Yearly Goal 1 Title", class: "answer-box"  %>
-        </div>
-        <div>
-          <%= form.text_field :'yearly_goal_1[description]', placeholder: "Yearly Goal 1 Description", class: "answer-box" %>
-        </div>
+<body class="new_yearly">
+  <div class="container">
+    <div class="question-box">
+      <div class="form-group">
+        <h1 class="goal-form-title">What are the three things you can do to get closer to your first five-year goal?</h1>
+        <%= form_with(url: yearlygoals_path, method: 'post') do |form| %>
+          <div>
+            <%= form.text_field :'yearly_goal_1[title]', placeholder: "Yearly Goal 1 Title", class: "answer-box"  %>
+          </div>
+          <div>
+            <%= form.text_field :'yearly_goal_1[description]', placeholder: "Yearly Goal 1 Description", class: "answer-box" %>
+          </div>
 
-        <div>
-          <%= form.text_field :'yearly_goal_2[title]', placeholder: "Yearly Goal 2 Title", class: "answer-box" %>
-        </div>
-        <div>
-          <%= form.text_field :'yearly_goal_2[description]', placeholder: "Yearly Goal 2 Description", class: "answer-box" %>
-        </div>
+          <div>
+            <%= form.text_field :'yearly_goal_2[title]', placeholder: "Yearly Goal 2 Title", class: "answer-box" %>
+          </div>
+          <div>
+            <%= form.text_field :'yearly_goal_2[description]', placeholder: "Yearly Goal 2 Description", class: "answer-box" %>
+          </div>
 
-        <div>
-          <%= form.text_field :'yearly_goal_3[title]', placeholder: "Yearly Goal 3 Title", class: "answer-box" %>
-        </div>
-        <div>
-          <%= form.text_field :'yearly_goal_3[description]', placeholder: "Yearly Goal 3 Description", class: "answer-box" %>
-        </div>
-    </div>
-    <div class="form-group">
-      <div>
-        <h1 class="goal-form-title">Which action is the most important one to get closer to your yearly goal?</h1>
-        <%= form.radio_button :most_important, 'yearly_goal_1', id: 'most_important1' %>
-        <%= form.label :most_important1, "Yearly Goal 1" %>
-
-        <%= form.radio_button :most_important, 'yearly_goal_2', id: 'most_important2' %>
-        <%= form.label :most_important2, "Yearly Goal 2" %>
-
-        <%= form.radio_button :most_important, 'yearly_goal_3', id: 'most_important3' %>
-        <%= form.label :most_important3, "Yearly Goal 3" %>
+          <div>
+            <%= form.text_field :'yearly_goal_3[title]', placeholder: "Yearly Goal 3 Title", class: "answer-box" %>
+          </div>
+          <div>
+            <%= form.text_field :'yearly_goal_3[description]', placeholder: "Yearly Goal 3 Description", class: "answer-box" %>
+          </div>
       </div>
-    </div>
+      <div class="form-group">
+        <div>
+          <h1 class="goal-form-title">Which action is the most important one to get closer to your yearly goal?</h1>
+          <%= form.radio_button :most_important, 'yearly_goal_1', id: 'most_important1' %>
+          <%= form.label :most_important1, "Yearly Goal 1" %>
 
-    <p><%= form.submit 'Save & Continue' %></p>
-  <% end %>
+          <%= form.radio_button :most_important, 'yearly_goal_2', id: 'most_important2' %>
+          <%= form.label :most_important2, "Yearly Goal 2" %>
+
+          <%= form.radio_button :most_important, 'yearly_goal_3', id: 'most_important3' %>
+          <%= form.label :most_important3, "Yearly Goal 3" %>
+        </div>
+      </div>
+
+      <p><%= form.submit 'Save & Continue' %></p>
+    <% end %>
+    </div>
   </div>
-</div>
+</body>
