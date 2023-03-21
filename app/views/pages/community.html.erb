@@ -6,7 +6,11 @@
         <% end %>
       </div>
       <div class="image-circle-nav">
-        <%= cl_image_tag current_user.photo.key, class: 'community-navbar-image' %>
+        <% if current_user.photo.blank? %>
+          <%= image_tag "default_avatar.png", width: 381, height: 384, class: 'image-circle' %>
+        <% else %>
+          <%= cl_image_tag(current_user.photo.key, width: 381, height: 384, class: 'image-circle') %>
+        <% end %>
       </div>
       <div style="display: flex; flex-direction: column; margin-bottom: 25px;">
         <h4 style="color: #64A4F4">Filter:</h4>
