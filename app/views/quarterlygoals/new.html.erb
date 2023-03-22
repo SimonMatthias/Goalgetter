@@ -1,25 +1,18 @@
 <body class="new_quarterly">
   <div class="goal-form">
-    <h1 class="goal-form-title">New Quarterly Goals</h1>
-    <div class="question-box">
-      <%= form_with(url: yearlygoal_quarterlygoals_path(@yearlygoal), method: 'post') do |form| %>
-        <% 3.times do |i| %>
-          <h1 class="goal-form-title">Quarterly Goal <%= i + 1 %></h2>
-          <div class="form-row">
-            <div class="field">
-              <%= form.label "Title" %>
-              <%= form.text_field "quarterlygoals[#{i}][title]" %>
+    <%= form_with url: "yearlygoals/:yearlygoal_id/quarterlygoals", method: 'post' do |form| %>
+      <div class="question-box">
+        <h1 class="goal-form-title">New Quarterly Goals</h1>
+          <% 3.times do |i| %>
+            <div>
+              <%= form.text_field "quarterlygoals[#{i}][title]" , class: "answer-box", required: true, placeholder: "Quarterly goal title #{i + 1}"%>
             </div>
-            <div class="field">
-              <%= form.label "Description" %>
-              <%= form.text_area "quarterlygoals[#{i}][description]" %>
-            </div>
-        <% end %>
-            <div class="actions">
-              <%= form.submit "Save & Continue", class: "btn btn-blue" %>
-            </div>
-          </div>
+              <div>
+                <%= form.text_area "quarterlygoals[#{i}][description]", class: "answer-box", required: true, placeholder: "Goal Description #{i +1}"%>
+              </div>
+          <% end %>
+            <%= form.submit "Save & Continue", class: "btn btn-blue" %>
+        </div>
       <% end %>
-    </div>
   </div>
 </body>
