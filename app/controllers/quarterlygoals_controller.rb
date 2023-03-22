@@ -17,7 +17,7 @@ class QuarterlygoalsController < ApplicationController
 
   def create
     @yearlygoal = current_user.yearlygoals.find(params[:yearlygoal_id])
-    if @quarterlygoals = @yearlygoal.quarterlygoals.create(quarterlygoals_params[:quarterlygoals].values)
+    if @quarterlygoals == @yearlygoal.quarterlygoals.create(quarterlygoals_params[:quarterlygoals].values)
       redirect_to dashboard_path
     else
       render :new
