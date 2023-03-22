@@ -28,3 +28,9 @@
   border-radius: 8px;
   border: 1px solid #64A4F4;
 }
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
