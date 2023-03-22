@@ -1,12 +1,11 @@
 body.fiveyear {
-  background: url('fiveyear.png') no-repeat center center fixed;
+  background: url('bg-fiveyear.png') no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   height: 100%;
   width: 100%;
-  position: fixed;
 }
 
 body.new_quarterly {
@@ -17,7 +16,6 @@ body.new_quarterly {
   -o-background-size: cover;
   height: 100%;
   width: 100%;
-  position: fixed;
 }
 
 body.new_yearly {
@@ -28,5 +26,4 @@ body.new_yearly {
   -o-background-size: cover;
   height: 100%;
   width: 100%;
-  position: fixed;
 }
