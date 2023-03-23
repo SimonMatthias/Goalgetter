@@ -17,15 +17,19 @@ class YearlygoalsController < ApplicationController
   def create
     selected_goal = params[:most_important]
     @fiveyeargoal = current_user.fiveyeargoals.first
-    case selected_goal
-    when 'yearly_goal_1'
+    @yearlygoal = Yearlygoal.new
+    if params[:yearly_goal_1].present?
       @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_1][:title], description: params[:yearly_goal_1][:description])
-    when 'yearly_goal_2'
+      redirect_to new_yearlygoal_quarterlygoal_path(@yearlygoal)
+    elsif params[:yearly_goal_2].present?
       @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_2][:title], description: params[:yearly_goal_2][:description])
-    when 'yearly_goal_3'
+      redirect_to new_yearlygoal_quarterlygoal_path(@yearlygoal)
+    elsif params[:yearly_goal_3].present?
       @yearlygoal = Yearlygoal.create(fiveyeargoal: @fiveyeargoal, title: params[:yearly_goal_3][:title], description: params[:yearly_goal_3][:description])
+      redirect_to new_yearlygoal_quarterlygoal_path(@yearlygoal)
+    else
+      render :new, status: :unprocessable_entity
     end
-    redirect_to new_yearlygoal_quarterlygoal_path(@yearlygoal)
   end
 
   def edit
