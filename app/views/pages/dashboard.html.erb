@@ -23,7 +23,7 @@
       <% @weeklytodos.each do |weeklytodo| %>
         <div class="card-to-do">
         <div class="card-info">
-          <input data-dashboard-numeric-target="check1" data-progressbar-target="check" id="<%=weeklytodo.quarterlygoal.title%>" class="largerCheckbox"  name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight click->dashboard-numeric#changeNumber"/>
+          <input data-dashboard-numeric-target="check1" data-progressbar-target="check" id="<%=weeklytodo.quarterlygoal.title%>" class="largerCheckbox"  name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight "/>
         <div class="card-to-do-title">
             <%# <%= link_to weeklytodo_path(weeklytodo)do %>
               <h5><%= weeklytodo.title %></h5>
