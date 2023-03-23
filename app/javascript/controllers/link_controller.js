@@ -2,17 +2,38 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="link"
 export default class extends Controller {
-  static targets = ["linkTo","linkTo1","linkTo2","linkTo3","linkTo4","linkTo5" ]
-
-
+  static targets = ["linkTo"]
 
   connect() {
-    // console.log('hi')
-  }
+    // console.log(window.location.pathname)
+    // console.log(this.linkToTargets)
+    // console.log(window.location.pathname)
+  };
 
   changeLink (){
-    console.log(this.linkToTarget1.href)
+    const linkToArray = this.linkToTargets
 
-    console.log('The page has fully loaded');
+    linkToArray.forEach(linkTo => {
+      if (window.location.pathname !== linkTo.pathname) {
+        linkTo.classList.remove("hidden")
+        // window.location.reload()
+
+        console.log("hoi")
+      // linkTo.classList.remove("hidden")
+    }
+    })
+    // linkToArray.forEach(linkTo => {
+
+    //   console.log(linkTo.pathname)
+    //   if (window.location.pathname == linkTo.pathname){
+    //     linkTo.classList.add("hidden")
+    //     console.log("hi")
+    //   }
+    //   else if (window.location.pathname !== linkTo.pathname) {
+    //     linkTo.classList.remove("hidden")
+    //     console.log("hoi")
+
+    //   }
+    // });
   };
-  }
+}
