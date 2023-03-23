@@ -19,6 +19,14 @@ class QuarterlygoalsController < ApplicationController
     @yearlygoal = current_user.yearlygoals.find(params[:yearlygoal_id])
 
     @quarterlygoals = @yearlygoal.quarterlygoals.create(quarterlygoals_params[:quarterlygoals].values)
+
+    weeklytodo1 = Weeklytodo.create(
+      title: "Budget Review",
+      description: "Spend 30 minutes each week reviewing expenses from the previous week, categorizing spending, and identifying areas where you can cut back. Look for ways to save money on bills, subscriptions, and other expenses. ",
+      done: false,
+      quarterlygoal: @quarterlygoals.last
+    )
+
     if @quarterlygoals.all?(&:valid?)
       redirect_to dashboard_path
     else
