@@ -23,7 +23,7 @@
       <% @weeklytodos.each do |weeklytodo| %>
         <div class="card-to-do">
         <div class="card-info">
-          <input data-dashboard-numeric-target="check1" data-progressbar-target="check" id="<%=weeklytodo.quarterlygoal.title%>" class="largerCheckbox"  name="weeklytodo" type="checkbox"  data-action="click->progressbar#changeHeight "/>
+          <input id="<%=weeklytodo.quarterlygoal.title%>" class="largerCheckbox"  name="weeklytodo" type="checkbox"  data-progressbar-target="check" data-action="change->progressbar#changeHeight change->dashboard-numeric#changeNumber"  data-dashboard-numeric-target="check1"/>
         <div class="card-to-do-title">
             <%# <%= link_to weeklytodo_path(weeklytodo)do %>
               <h5><%= weeklytodo.title %></h5>
@@ -34,7 +34,7 @@
             <%= link_to(image_tag("edit.png", style: 'height:40px; width:auto;'), edit_weeklytodo_path(weeklytodo), :method => :get) %>
             <%="from quarterly goal"%>
             <%= button_to "#{weeklytodo.quarterlygoal.title}", "/yearlygoals/:yearlygoal_id/quarterlygoals/:id", :class => "btn-white-red" , data: {
-            "progressbar-target"=>"btnValue", } %>
+            "progressbar-target"=>"btnValue"} %>
           </div>
         </div>
       <% end %>
@@ -43,7 +43,7 @@
       <h2>Your quarterly goals:</h2>
       <div class="quarterly-container" >
       <% @quarterlygoals.each do |quarterlygoal| %>
-        <div class="progress-card-small">
+        <div class="progress-card-small" data-progressbar-target="progressSmall">
           <div class="progressbar-small" >
             <div class="progress-small" id="<%=quarterlygoal.title%>" data-height="0"  style="height: 0%" data-progressbar-target="bar">
             </div>

@@ -11,7 +11,6 @@ export default class extends Controller {
   changeNumber() {
   var topNumeric= parseFloat(this.topNumberTarget.textContent)
 
-  this.check1Targets.forEach((check1) => {
   if (this.check1Target.checked == true && topNumeric <= 99){
     topNumeric ++;
     this.topNumberTarget.textContent = topNumeric
@@ -20,6 +19,5 @@ export default class extends Controller {
     topNumeric --;
     this.topNumberTarget.textContent = topNumeric
     }
-    })
 }
 }
