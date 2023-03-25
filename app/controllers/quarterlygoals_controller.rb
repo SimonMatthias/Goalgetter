@@ -24,7 +24,7 @@ class QuarterlygoalsController < ApplicationController
       title: "Budget Review",
       description: "Spend 30 minutes each week reviewing expenses from the previous week, categorizing spending, and identifying areas where you can cut back. Look for ways to save money on bills, subscriptions, and other expenses. ",
       done: false,
-      quarterlygoal: @quarterlygoals.last
+      quarterlygoal: @quarterlygoals.first
     )
 
     if @quarterlygoals.all?(&:valid?)
